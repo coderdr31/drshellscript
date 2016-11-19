@@ -1,0 +1,68 @@
+#!/usr/bin/python
+# coding: utf-8
+##################################################################
+# argparse
+##################################################################
+import argparse
+parser = argparse.ArgumentParser(
+    prog="base64",
+    formatter_class=argparse.RawDescriptionHelpFormatter,  # 没有这句话, 换行会过滤掉
+    description='''\
+        Usage Example:
+        --------------------------------
+            base64 abc -e
+            base64 'abc' -e
+            base64 -e abc  # same result as below two
+            base64 .-  # -d default
+            base64 .- -d  # same as below
+            base64 --autho
+        ''')
+parser.add_argument('string', nargs='?', help='decode the string')
+parser.add_argument('-d', action='store_true', help='decode the string [default], base64')
+parser.add_argument('-e', action='store_true', help='encode the string, base64')
+parser.add_argument('-d32', action='store_true', help='decode the string [default], base32')
+parser.add_argument('-e32', action='store_true', help='encode the string, base32')
+parser.add_argument('-d16', action='store_true', help='decode the string [default], base16')
+parser.add_argument('-e16', action='store_true', help='encode the string, base16')
+parser.add_argument('--autho', action='store_const', const='coderdr31', help='show the autho')
+parser.add_argument('--version', action='version', version='%(prog)s 1.0')
+args = parser.parse_args()
+
+##################################################################
+# encode & decode
+##################################################################
+import base64
+def encode(msg):
+    return base64.b64encode(msg)
+def decode(msg):
+    return base64.b64decode(msg)
+def encode_32(msg):
+    return base64.b32encode(msg)
+def decode_32(msg):
+    return base64.b32decode(msg)
+def encode_16(msg):
+    return base64.b16encode(msg)
+def decode_16(msg):
+    return base64.b16decode(msg)
+##################################################################
+# main
+##################################################################
+import sys
+if __name__ == "__main__":
+    if args.autho:
+        print args.autho
+
+    if len(sys.argv) == 2:  # base64 .- 默认指定为 -d
+        args.d = True
+    if args.e and args.string:
+        print encode(args.string)
+    if args.d and args.string:
+        print decode(args.string)
+    if args.e32 and args.string:
+        print encode_32(args.string)
+    if args.d32 and args.string:
+        print decode_32(args.string)
+    if args.e16 and args.string:
+        print encode_16(args.string)
+    if args.d16 and args.string:
+        print decode_16(args.string)

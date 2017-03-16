@@ -13,6 +13,7 @@ alias cddt="cd ~/github/DGithub/DTemplate"
 alias cddcpp="cd ~/github/DGithub/DTemplate/cpp"
 alias cddpc="cd ~/github/DGithub/DPc/config_pc_dr"
 alias cddshell="cd ~/github/drshellscript"
+alias cddjvim="cd ~/.config/jvim"
 
 alias cdjg="cd ~/github/JGithub"
 alias cdjshell="cd ~/github/jShellscript"
@@ -63,10 +64,6 @@ alias dvim='docker run -i -t -v /home/dr/Desktop/dvim/vim:/home/coderdr31/.vim -
             && echo \"source /home/coderdr31/.vim/myshellscript.sh\" >> /home/coderdr31/.bashrc \
             && /bin/bash"'
 
-##################################################################
-## cd
-##################################################################
-alias cddjvim="cd ~/.config/jvim"
 
 ##################################################################
 ## CTF
@@ -77,3 +74,20 @@ alias stegsolve="java -jar ~/github/otherpeople/ctf-tools/stegsolve/bin/stegsolv
 ## 渗透
 ##################################################################
 alias sqlmap="python ~/github/otherpeople/ctf-tools/sqlmap/bin/sqlmap.py"
+
+##################################################################
+## 运行软件
+##################################################################
+alias pycharm="/home/dr/applicationGreen/pycharm-2016.3.2/bin/pycharm.sh"
+
+
+##################################################################
+## intelmq
+##################################################################
+alias vimiout="vim /opt/intelmq/var/lib/bots/file-output/events.txt"
+alias catiout="cat /opt/intelmq/var/lib/bots/file-output/events.txt"
+alias cliout="> /opt/intelmq/var/lib/bots/file-output/events.txt"
+alias cpiout="cp /opt/intelmq/var/lib/bots/file-output/events.txt"
+# alias chintelmq="sudo chown -R intelmq.intelmq /opt/intelmq && sudo chgrp www-data /opt/intelmq/etc/*.conf"
+# alias chidr="sudo chown -R dr.dr /opt/intelmq && sudo chgrp www-data /opt/intelmq/etc/*.conf"
+alias choptintelmq="sudo chmod -R 777 /opt/intelmq"

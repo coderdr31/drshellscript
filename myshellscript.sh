@@ -81,6 +81,8 @@ alias sqlmap="python ~/github/otherpeople/ctf-tools/sqlmap/bin/sqlmap.py"
 alias pycharm="/home/dr/applicationGreen/pycharm-2016.3.2/bin/pycharm.sh"
 alias webstorm="/home/dr/applicationGreen/WebStorm-171.4249.40/bin/webstorm.sh"
 alias cdmongodb="cd /usr/local/mongodb/bin"
+alias mongodbstart="cd /usr/local/mongodb/bin && ./mongod"
+alias studio3t="cd /home/dr/applicationGreen/studio-3t-5.2.2-linux-x64/bin && ./studio-3t.sh"
 
 
 ##################################################################
@@ -94,3 +96,6 @@ alias cpiout="cp /opt/intelmq/var/lib/bots/file-output/events.txt"
 # alias chidr="sudo chown -R dr.dr /opt/intelmq && sudo chgrp www-data /opt/intelmq/etc/*.conf"
 alias choptintelmq="sudo chmod -R 777 /opt/intelmq"
 alias rmiout="rm /opt/intelmq/var/lib/bots/file-output/* -f && rm /opt/intelmq/var/log/* -f"
+alias cpi1="cp /opt/intelmq/etc/conf/1/* /opt/intelmq/etc"
+alias cpi2="cp /opt/intelmq/etc/conf/12-20/* /opt/intelmq/etc"
+alias cpi3="cp /opt/intelmq/etc/conf/3/* /opt/intelmq/etc"

@@ -37,6 +37,7 @@ alias gis="git status"
 alias gia="git add ."
 alias gial='git add --all'
 alias gicommit='git commit -m'
+alias gipush='git push origin master'
 
 ##################################################################
 ## ssh

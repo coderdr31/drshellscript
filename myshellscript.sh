@@ -20,8 +20,8 @@ alias cdjshell="cd ~/github/jShellscript"
 alias cdjpc='cd ~/github/JGithub/jPC'
 alias cdjserver='cd ~/github/JGithub/jServer'
 alias cdjtemplate="cd ~/github/JGithub/jTemplate"
-alias cdjsc="cd ~/github/JGithub/jvim/UltiSnips"
-alias cdjvim="cd ~/github/JGithub/jvim/vimrc"
+alias cdjsc="cd ~/github/JGithub/jVim/UltiSnips"
+alias cdjvim="cd ~/github/JGithub/jVim/vimrc"
 alias cdog="cd ~/github/otherpeople"
 
 ##################################################################
@@ -29,6 +29,14 @@ alias cdog="cd ~/github/otherpeople"
 ##################################################################
 alias vimjms="vim ~/github/jShellscript/myscript"
 alias vimms="cd ~/github/drshellscript/ && vim myshellscript.sh"
+
+##################################################################
+## git
+##################################################################
+alias gis="git status"
+alias gia="git add ."
+alias gial='git add --all'
+alias gicommit='git commit -m'
 
 ##################################################################
 ## ssh
@@ -63,6 +71,8 @@ alias dvim='docker run -i -t -v /home/dr/Desktop/dvim/vim:/home/coderdr31/.vim -
             "ln -s /home/coderdr31/.vim/dvimrc /home/coderdr31/.vimrc \
             && echo \"source /home/coderdr31/.vim/myshellscript.sh\" >> /home/coderdr31/.bashrc \
             && /bin/bash"'
+alias greps="grep -riIn --color=always"  # example: greps hell
+alias findname='find -iname'  # exapmle: findname "*.txt"
 
 
 ##################################################################

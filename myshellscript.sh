@@ -46,20 +46,44 @@ alias sshsv="ssh root@115.159.29.14"
 alias sshrh3="ssh root@192.168.56.101"
 
 ########################################
-## Shadowsocks 后面两个是统计和显示流量
+## Shadowsocks 后面两个是统计和显示流量 + Kcptun 加速
 ########################################
-#alias stass="sudo -S sslocal -c /etc/shadowsocks.json -d start && exit"
-alias stass="sudo -S sslocal -c ~/github/JGithub/jPC/src/shadowsocks.json.bak -d start && exit"
-alias stoss="sudo -S sslocal -c ~/github/JGithub/jPC/src/shadowsocks.json.bak -d stop && exit"
-alias stassother="sudo -S sslocal -c ~/github/JGithub/jPC/src/shadowsocks.json -d start && exit"
-alias stossother="sudo -S sslocal -c ~/github/JGithub/jPC/src/shadowsocks.json -d stop && exit"
-#alias stass="echo '$mypassword' | sudo -S sslocal -c /etc/shadowsocks.json -d start && exit"
-#alias stoss="echo '$mypassword' | sudo -S sslocal -c /etc/shadowsocks.json -d stop && exit"
+alias sslog='tail /var/log/shadowsocks.log'
+# 搬瓦工自带 python
+alias stass="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.python.json -d start && exit"  # 这样默认是全局的, -d 会在后台运行
+alias stoss="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.python.json -d stop && exit"
+alias restass='sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.python.json -d stop && sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.python.json -d start && exit'
+# 搬瓦工 go
+alias stassgo="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.go.json -d start && exit"
+alias stossgo="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.go.json -d stop && exit"
+alias stassgokcptun="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.go_kcptun.json -d start && exit"
+alias stossgokcptun="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.go_kcptun.json -d stop && exit"
+alias stassgokcptunall='stakcp stassgokcptun'  # OnO...
+# kcptun 参考 断流: https://github.com/xtaci/kcptun/issues/218
+# 手动参数设定: https://github.com/xtaci/kcptun/issues/137
+alias stakcp='nohup ~/Downloads/client_linux_amd64 -r "45.78.9.29:18384" -l ":11080" -mode fast2 -mtu 512 >/dev/null 2>&1 &'
+# 有时候不行了就改 mtu, 512, 1024 两个换着来
+# function stakcp() { nohup ~/Downloads/client_linux_amd64 -r "45.78.9.29:18383" -l ":11080" -mode fast2 -mtu 256 >/dev/null 2>&1 & }
+alias showkcp="ps -ef | grep client_linux_amd64 | grep -v grep | awk '{print $2}'"  # 这里原意是只输出 PID, 可还是会输出整个命令, 也还行
+function stokcp() { kill `ps -ef | grep client_linux_amd64 | grep -v grep | awk '{print $2}'` } # 直接 stokcp 既可以执行函数了
+# shadowsocksR
+alias stassr='sudo python ~/github/others/shadowsocks/shadowsocks/local.py -s 45.78.9.29 -p 443 -k 6irwnc8jck -m aes-256-cfb -d start'  # 后台运行
+alias stossr='sudo python ~/github/others/shadowsocks/shadowsocks/local.py -d stop'  # 停止
+# 别人的免费
+alias stassy="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.yzy.json -d start && exit"
+alias stossy="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.yzy.json -d stop && exit"
+alias stassother="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.json -d start && exit"
+alias stossother="sudo -S sslocal -c ~/.config/jshadowsocks/shadowsocks.json -d stop && exit"
 #alias cstass="sudo sslocal -s 45.78.9.29 -p 443 -b 127.0.0.1 -l 1080 -k MzBhMDU4YT -m aes-256-cfb -t 500 --fast-open -d start -v"
-alias cstass="sudo sslocal -s 45.78.9.29 -p 443 -b 127.0.0.1 -l 1080 -k MzBhMDU4YT -m aes-256-cfb -t 300 -d start -v"
-alias cstoss="sudo sslocal -s 45.78.9.29 -p 443 -b 127.0.0.1 -l 1080 -k MzBhMDU4YT -m aes-256-cfb -t 300 -d stop -v"
-alias staipt="sudo iptables -I OUTPUT -s 127.0.0.1 -p tcp --sport 1080"
+
+alias lsofi1080='sudo lsof -i:1080'
+alias staiptall="sudo iptables -I OUTPUT -s 127.0.0.1 -p tcp --sport 1080"
 alias showipt="sudo iptables -n -v -L -t filter |grep -i 'spt:1080' |awk -F' ' '{print $2}'"
+# 设置防火墙, 每次开机后要重设
+alias staipt="sudo iptables -A INPUT -p tcp -s 0/0 --sport 1080 -d 45.78.9.29 --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT &&
+sudo iptables -A INPUT -p tcp -s 0/0 --sport 1080 -d 45.78.9.29 --dport 443 -m state --state ESTABLISHED,RELATED -j ACCEPT &&
+sudo iptables -A OUTPUT -p tcp -s 45.78.9.29 --sport 443 -d 0/0 --dport 1080 -m state --state ESTABLISHED -j ACCEPT"
+alias iptsta='sudo iptables -L -n | grep 1080'
 
 ##################################################################
 ##

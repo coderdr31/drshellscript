@@ -98,6 +98,7 @@ alias dvim='docker run -i -t -v /home/dr/Desktop/dvim/vim:/home/coderdr31/.vim -
             && /bin/bash"'
 alias greps="grep -riIn --color=always"  # example: greps hell
 alias findname='find -iname'  # exapmle: findname "*.txt"
+alias pythonsimpleserver="python -m SimpleHTTPServer"
 
 
 ##################################################################

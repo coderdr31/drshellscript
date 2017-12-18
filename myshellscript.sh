@@ -15,13 +15,6 @@ alias cddpc="cd ~/github/DGithub/DPc/config_pc_dr"
 alias cddshell="cd ~/github/drshellscript"
 alias cddjvim="cd ~/.config/jvim"
 
-alias cdjg="cd ~/github/JGithub"
-alias cdjshell="cd ~/github/jShellscript"
-alias cdjpc='cd ~/github/JGithub/jPC'
-alias cdjserver='cd ~/github/JGithub/jServer'
-alias cdjtemplate="cd ~/github/JGithub/jTemplate"
-alias cdjsc="cd ~/github/JGithub/jVim/UltiSnips"
-alias cdjvim="cd ~/github/JGithub/jVim/vimrc"
 alias cdog="cd ~/github/otherpeople"
 
 ##################################################################

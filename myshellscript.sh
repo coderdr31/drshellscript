@@ -14,6 +14,8 @@ alias cddcpp="cd ~/github/DGithub/DTemplate/cpp"
 alias cddpc="cd ~/github/DGithub/DPc/config_pc_dr"
 alias cddshell="cd ~/github/drshellscript"
 alias cddjvim="cd ~/.config/jvim"
+alias cddnote="cd ~/github/DGithub/DNote"
+alias cddtmp="cd ~/github/DGithub/DTmp"
 
 alias cdog="cd ~/github/otherpeople"
 

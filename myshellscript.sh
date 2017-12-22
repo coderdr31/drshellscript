@@ -16,6 +16,8 @@ alias cddshell="cd ~/github/drshellscript"
 alias cddjvim="cd ~/.config/jvim"
 alias cddnote="cd ~/github/DGithub/DNote"
 alias cddtmp="cd ~/github/DGithub/DTmp"
+alias cddbnote="cd ~/github/DGithub/DBasicNote"
+
 
 alias cdog="cd ~/github/otherpeople"
 

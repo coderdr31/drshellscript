@@ -18,7 +18,6 @@ alias cddnote="cd ~/github/DGithub/DNote"
 alias cddtmp="cd ~/github/DGithub/DTmp"
 alias cddbnote="cd ~/github/DGithub/DBasicNote"
 
-
 alias cdog="cd ~/github/otherpeople"
 
 ##################################################################

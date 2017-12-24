@@ -1,1 +1,6 @@
+#!/bin/bash
+echo "正在初始化配置......"
+if [ ! -e $HOME/.config/jspacemacs ];then mkdir -p $HOME/.config/jspacemacs;fi
+
 cp *.el ~/.config/jspacemacs
+echo "初始化配置结束....."

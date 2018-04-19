@@ -17,6 +17,7 @@ alias cddjvim="cd ~/.config/jvim"
 alias cddnote="cd ~/github/DGithub/DNote"
 alias cddtmp="cd ~/github/DGithub/DTmp"
 alias cddbnote="cd ~/github/DGithub/DBasicNote"
+alias cddcodeb="cd ~/github/DGithub/DCodeBackup"
 
 alias cdog="cd ~/github/otherpeople"
 
@@ -115,7 +116,6 @@ alias webstorm="/home/dr/applicationGreen/WebStorm-171.4249.40/bin/webstorm.sh"
 alias cdmongodb="cd /usr/local/mongodb/bin"
 alias mongodbstart="cd /usr/local/mongodb/bin && ./mongod"
 alias studio3t="cd /home/dr/applicationGreen/studio-3t-5.2.2-linux-x64/bin && ./studio-3t.sh"
-
 
 ##################################################################
 ## intelmq

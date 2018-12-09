@@ -117,6 +117,7 @@ alias webstorm="/home/dr/applicationGreen/WebStorm-171.4249.40/bin/webstorm.sh"
 alias cdmongodb="cd /usr/local/mongodb/bin"
 alias mongodbstart="cd /usr/local/mongodb/bin && ./mongod"
 alias studio3t="cd /home/dr/applicationGreen/studio-3t-5.2.2-linux-x64/bin && ./studio-3t.sh"
+alias robo3t="cd /home/dr/applicationGreen/robo3t-1.2.1-linux-x86_64-3e50a65/bin && ./robo3t"
 
 ##################################################################
 ## intelmq

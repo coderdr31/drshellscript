@@ -6,8 +6,7 @@
 ##################################################################
 alias cdws="cd ~/Desktop/dworkspace"
 alias cdshare="cd ~/Documents/share"
-alias cdmutip="cd ~/Documents/share/毕设"
-alias cdgraduatep="cd ~/Documents/share/毕设"
+alias cdmultip="cd ~/Documents/share/多协议"
 
 alias cddg="cd ~/github/DGithub"
 alias cddctf="cd ~/github/DGithub/DCtf"
